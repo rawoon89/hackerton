@@ -1,94 +1,104 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css");
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  :root {
+    /* Hanwha Life light BI theme */
+    --background: #f7f8fa;
+    --foreground: #0f1419;
+    --card: #ffffff;
+    --card-foreground: #0f1419;
+    --popover: #ffffff;
+    --popover-foreground: #0f1419;
+    --primary: #ff6b00;
+    --primary-foreground: #ffffff;
+    --secondary: #f1f3f6;
+    --secondary-foreground: #0f1419;
+    --muted: #f1f3f6;
+    --muted-foreground: #6b7484;
+    --accent: #fff4ec;
+    --accent-foreground: #ff6b00;
+    --destructive: #ef4444;
+    --border: #e4e7ec;
+    --input: #ffffff;
+    --ring: #ff6b00;
+    --radius: 0.625rem;
+
+    /* Hanwha brand */
+    --hanwha-orange: #ff6b00;
+    --hanwha-orange-soft: #ff8a3d;
+    --hanwha-orange-dim: rgba(255, 107, 0, 0.1);
+
+    /* Researcher accents */
+    --researcher-product: #2563eb;
+    --researcher-policy: #059669;
+    --researcher-loss: #dc2626;
+    --researcher-investment: #d97706;
+
+    /* Chart palette (light-friendly) */
+    --chart-grid: #e4e7ec;
+    --chart-axis: #6b7484;
+    --chart-tooltip-bg: #ffffff;
+    --chart-tooltip-border: #e4e7ec;
+    --chart-tooltip-text: #0f1419;
+  }
+
+  html {
+    font-family:
+      "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+      system-ui, Roboto, "Helvetica Neue", "Segoe UI", sans-serif;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "ss06", "cv01";
+  }
+
+  * {
+    border-color: var(--border);
   }
 }
 
-@layer base {
-  .theme {
-    --font-heading: var(--font-sans);
-    --font-sans: var(--font-sans);
+@layer components {
+  .hanwha-gradient {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8a3d 100%);
   }
-  :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+
+  .hanwha-text-gradient {
+    background: linear-gradient(135deg, #ff6b00 0%, #ffb366 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
-  .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+
+  .glass-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    box-shadow:
+      0 1px 2px rgba(15, 20, 25, 0.04),
+      0 4px 16px rgba(15, 20, 25, 0.04);
   }
-  * {
-    @apply border-border outline-ring/50;
+
+  .pulse-soft {
+    animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
   }
-  html {
-    @apply font-sans;
+
+  .fade-in {
+    animation: fade-in 0.4s ease-out;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }
