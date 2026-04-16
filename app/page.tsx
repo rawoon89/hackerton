@@ -96,17 +96,7 @@ export default function Home() {
       <div className="relative max-w-6xl mx-auto px-6 py-10 space-y-8">
         <header className="flex items-center justify-between pb-6 border-b border-[color:var(--hanwha-line)]">
           <div className="flex items-center gap-5">
-            <div
-              className="h-16 w-[148px] bg-no-repeat bg-center"
-              style={{
-                backgroundImage: "url(/hanwha-logo.jpg)",
-                backgroundSize: "auto 240%",
-                backgroundPosition: "center 62%",
-              }}
-              role="img"
-              aria-label="한화생명"
-            />
-            <div className="border-l border-[color:var(--hanwha-line)] pl-5">
+            <div>
               <div className="text-[10px] font-bold tracking-[0.2em] text-[color:var(--hanwha-orange)] uppercase">
                 Insight BI
               </div>
