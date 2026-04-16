@@ -1,6 +1,6 @@
 "use client";
 
-import { Activity, Flame } from "lucide-react";
+import { Activity } from "lucide-react";
 import { useState } from "react";
 import { EditorResponse } from "@/components/EditorResponse";
 import { QueryInput } from "@/components/QueryInput";
@@ -89,32 +89,38 @@ export default function Home() {
         className="fixed inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255,107,0,0.08), transparent 60%), radial-gradient(ellipse 60% 40% at 80% 100%, rgba(59,130,246,0.05), transparent 60%)",
+            "radial-gradient(ellipse 60% 35% at 50% -10%, rgba(250,102,0,0.05), transparent 70%)",
         }}
       />
 
       <div className="relative max-w-6xl mx-auto px-6 py-10 space-y-8">
-        <header className="flex items-center justify-between pb-6 border-b border-[color:var(--border)]">
-          <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl hanwha-gradient flex items-center justify-center shadow-lg shadow-orange-500/20">
-              <Flame className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold tracking-tight">
-                <span className="hanwha-text-gradient">한화생명</span>
-                <span className="text-[color:var(--foreground)]">
-                  {" "}
-                  Insight BI
-                </span>
+        <header className="flex items-center justify-between pb-6 border-b border-[color:var(--hanwha-line)]">
+          <div className="flex items-center gap-5">
+            <div
+              className="h-16 w-[148px] bg-no-repeat bg-center"
+              style={{
+                backgroundImage: "url(/hanwha-logo.jpg)",
+                backgroundSize: "auto 240%",
+                backgroundPosition: "center 62%",
+              }}
+              role="img"
+              aria-label="한화생명"
+            />
+            <div className="border-l border-[color:var(--hanwha-line)] pl-5">
+              <div className="text-[10px] font-bold tracking-[0.2em] text-[color:var(--hanwha-orange)] uppercase">
+                Insight BI
+              </div>
+              <h1 className="text-xl font-bold tracking-tight text-[color:var(--hanwha-ink)] mt-1">
+                인사이트 BI 대시보드
               </h1>
-              <p className="text-xs text-[color:var(--muted-foreground)] mt-0.5">
-                자연어로 물어보는 보험 데이터 인텔리전스
+              <p className="text-xs text-[color:var(--hanwha-gray)] mt-0.5">
+                자연어로 묻고, 4명의 리서처가 답합니다
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-2 text-xs text-[color:var(--muted-foreground)]">
-            <Activity className="w-3.5 h-3.5 text-green-400" />
-            <span>4 Researchers · 1 Editor</span>
+          <div className="flex items-center gap-2 text-xs text-[color:var(--hanwha-gray)]">
+            <Activity className="w-3.5 h-3.5 text-emerald-500" />
+            <span className="font-medium">4 Researchers · 1 Editor</span>
           </div>
         </header>
 
@@ -129,14 +135,14 @@ export default function Home() {
             <span className="text-[color:var(--hanwha-orange)] font-semibold uppercase tracking-widest">
               Router
             </span>
-            <span className="text-[color:var(--muted-foreground)]">
+            <span className="text-[color:var(--hanwha-gray)]">
               {result.queryPlan.intent}
             </span>
             <div className="flex gap-1.5 ml-auto flex-wrap">
               {result.queryPlan.keywords.map((k, i) => (
                 <span
                   key={i}
-                  className="px-2 py-0.5 rounded-full bg-[color:var(--secondary)] text-[color:var(--muted-foreground)]"
+                  className="px-2 py-0.5 rounded-full bg-[color:var(--secondary)] text-[color:var(--hanwha-gray)]"
                 >
                   #{k}
                 </span>
@@ -147,7 +153,7 @@ export default function Home() {
 
         {question && (
           <div className="fade-in">
-            <div className="text-xs text-[color:var(--muted-foreground)] mb-1">
+            <div className="text-xs text-[color:var(--hanwha-gray)] mb-1">
               질문
             </div>
             <div className="text-lg font-medium">{question}</div>
@@ -162,7 +168,7 @@ export default function Home() {
 
         {(loading || result) && (
           <section>
-            <div className="text-xs font-semibold tracking-widest text-[color:var(--muted-foreground)] uppercase mb-3">
+            <div className="text-xs font-semibold tracking-widest text-[color:var(--hanwha-gray)] uppercase mb-3">
               Researchers
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -180,7 +186,7 @@ export default function Home() {
 
         {result?.editor && (
           <section>
-            <div className="text-xs font-semibold tracking-widest text-[color:var(--muted-foreground)] uppercase mb-3">
+            <div className="text-xs font-semibold tracking-widest text-[color:var(--hanwha-gray)] uppercase mb-3">
               Final Answer
             </div>
             <EditorResponse response={result.editor} />
@@ -188,7 +194,7 @@ export default function Home() {
         )}
 
         {!loading && !result && !error && (
-          <div className="text-center py-16 text-[color:var(--muted-foreground)]">
+          <div className="text-center py-16 text-[color:var(--hanwha-gray)]">
             <div className="text-sm">
               질문을 입력하거나 위 샘플 질문을 선택하세요
             </div>

@@ -38,15 +38,17 @@ export function EditorResponse({ response }: Props) {
 
   return (
     <div className="space-y-5">
-      <div className="glass-card rounded-2xl p-7 fade-in relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1 hanwha-gradient" />
+      <div className="glass-card p-8 fade-in relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-1 hanwha-solid" />
         <div className="flex items-center gap-2 mb-4">
-          <Sparkles className="w-4 h-4 text-[color:var(--hanwha-orange)]" />
-          <div className="text-xs font-semibold tracking-widest text-[color:var(--hanwha-orange)] uppercase">
+          <div className="w-6 h-6 rounded-full hanwha-solid flex items-center justify-center">
+            <Sparkles className="w-3.5 h-3.5 text-white" />
+          </div>
+          <div className="text-[11px] font-bold tracking-[0.18em] text-[color:var(--hanwha-orange)] uppercase">
             Editor Agent
           </div>
         </div>
-        <div className="text-base leading-[1.8] text-[color:var(--foreground)] whitespace-pre-wrap">
+        <div className="text-[15px] leading-[1.85] text-[color:var(--hanwha-ink)] whitespace-pre-wrap">
           {renderMarkdown(response.answer)}
         </div>
       </div>
@@ -69,7 +71,7 @@ function renderMarkdown(text: string): React.ReactNode {
       return (
         <strong
           key={i}
-          className="text-[color:var(--hanwha-orange-soft)] font-semibold"
+          className="text-[color:var(--hanwha-orange)] font-bold"
         >
           {p.slice(2, -2)}
         </strong>

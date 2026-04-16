@@ -7,44 +7,43 @@
 
 @layer base {
   :root {
-    /* Hanwha Life light BI theme */
-    --background: #f7f8fa;
-    --foreground: #0f1419;
+    /* Hanwha Life brand-aligned light theme
+       Source: hanwhalife.com/resources/main/css/main.css */
+    --background: #f5f6f7;
+    --foreground: #272b2f;
     --card: #ffffff;
-    --card-foreground: #0f1419;
+    --card-foreground: #272b2f;
     --popover: #ffffff;
-    --popover-foreground: #0f1419;
-    --primary: #ff6b00;
+    --popover-foreground: #272b2f;
+    --primary: #fa6600;
     --primary-foreground: #ffffff;
-    --secondary: #f1f3f6;
-    --secondary-foreground: #0f1419;
-    --muted: #f1f3f6;
-    --muted-foreground: #6b7484;
-    --accent: #fff4ec;
-    --accent-foreground: #ff6b00;
-    --destructive: #ef4444;
-    --border: #e4e7ec;
+    --secondary: #f1f2f5;
+    --secondary-foreground: #272b2f;
+    --muted: #fafafa;
+    --muted-foreground: #737c85;
+    --accent: #fef8f4;
+    --accent-foreground: #fa6600;
+    --destructive: #e23c3c;
+    --border: #e2e5ea;
     --input: #ffffff;
-    --ring: #ff6b00;
-    --radius: 0.625rem;
+    --ring: #fa6600;
+    --radius: 1rem;
 
-    /* Hanwha brand */
-    --hanwha-orange: #ff6b00;
-    --hanwha-orange-soft: #ff8a3d;
-    --hanwha-orange-dim: rgba(255, 107, 0, 0.1);
+    /* Hanwha brand (from hanwhalife.com CSS) */
+    --hanwha-orange: #fa6600;
+    --hanwha-orange-deep: #f35800;
+    --hanwha-orange-soft: #f47320;
+    --hanwha-peach: #fef8f4;
+    --hanwha-yellow: #fec33b;
+    --hanwha-ink: #272b2f;
+    --hanwha-gray: #737c85;
+    --hanwha-line: #e2e5ea;
 
-    /* Researcher accents */
+    /* Researcher accents (functional colors, tuned warmer) */
     --researcher-product: #2563eb;
     --researcher-policy: #059669;
     --researcher-loss: #dc2626;
     --researcher-investment: #d97706;
-
-    /* Chart palette (light-friendly) */
-    --chart-grid: #e4e7ec;
-    --chart-axis: #6b7484;
-    --chart-tooltip-bg: #ffffff;
-    --chart-tooltip-border: #e4e7ec;
-    --chart-tooltip-text: #0f1419;
   }
 
   html {
@@ -65,23 +64,32 @@
 }
 
 @layer components {
-  .hanwha-gradient {
-    background: linear-gradient(135deg, #ff6b00 0%, #ff8a3d 100%);
+  .hanwha-solid {
+    background: var(--hanwha-orange);
+    color: #ffffff;
   }
 
-  .hanwha-text-gradient {
-    background: linear-gradient(135deg, #ff6b00 0%, #ffb366 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  .hanwha-text {
+    color: var(--hanwha-orange);
   }
 
   .glass-card {
     background: #ffffff;
-    border: 1px solid var(--border);
-    box-shadow:
-      0 1px 2px rgba(15, 20, 25, 0.04),
-      0 4px 16px rgba(15, 20, 25, 0.04);
+    border: 1px solid var(--hanwha-line);
+    border-radius: 20px;
+    box-shadow: 0 6px 24px rgba(39, 43, 47, 0.06);
+  }
+
+  .hanwha-pill {
+    border-radius: 9999px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--hanwha-gray);
   }
 
   .pulse-soft {

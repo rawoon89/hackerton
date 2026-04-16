@@ -23,16 +23,16 @@ interface Props {
 }
 
 const PALETTE = [
-  "#ff6b00",
-  "#ff8a3d",
-  "#3b82f6",
-  "#10b981",
-  "#f59e0b",
-  "#ef4444",
-  "#a855f7",
-  "#06b6d4",
-  "#eab308",
-  "#ec4899",
+  "#fa6600",
+  "#f47320",
+  "#fec33b",
+  "#f35800",
+  "#2563eb",
+  "#059669",
+  "#dc2626",
+  "#d97706",
+  "#7c3aed",
+  "#0891b2",
 ];
 
 const AXIS_STYLE = { fill: "#6b7484", fontSize: 11 };
@@ -112,9 +112,9 @@ function renderChart(type: ChartType, data: ChartPoint[]) {
         <Line
           type="monotone"
           dataKey="value"
-          stroke="#ff6b00"
+          stroke="#fa6600"
           strokeWidth={2.5}
-          dot={{ fill: "#ff6b00", r: 4 }}
+          dot={{ fill: "#fa6600", r: 4 }}
           activeDot={{ r: 6 }}
         />
       </LineChart>
